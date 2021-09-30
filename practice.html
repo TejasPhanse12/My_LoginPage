@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="practice.css" />
+  </head>
+
+  <body>
+    <h1>Regestration</h1>
+
+    <form action="login.html">
+      <table width="20%">
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" size="25" name="name" /></td>
+        </tr>
+
+        <tr>
+          <td>Email:</td>
+          <td><input type="text" size="25" name="email" /></td>
+        </tr>
+
+        <tr>
+          <td>Username:</td>
+          <td><input type="text" size="25" name="userid" /></td>
+        </tr>
+
+        <tr>
+          <td>Password:</td>
+          <td>
+            <input
+              type="password"
+              placeholder="Type your password"
+              id="PassEntry"
+              name="pwd"
+            />
+            <span id="StrengthDisp" class="badge displayBadge">Weak</span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>RePassword:</td>
+          <td><input type="Password" size="25" name="repwd" /></td>
+        </tr>
+
+        <tr>
+          <td><input type="Reset" /></td>
+          <td>
+            <input
+              type="submit"
+              onclick="return check(this.form)"
+              value="Login"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script language="javascript">
+      function check(form) {
+        if (
+          form.userid.value == "" ||
+          form.name.value == "" ||
+          form.email.value == ""
+        ) {
+          alert("Error Password or Username");
+          return false;
+        }
+        if (form.pwd.value.localeCompare(form.repwd.value) != 0) {
+          alert("Password and RePassword doesn't match");
+          return false;
+        } else {
+          alert("Registraction Successful");
+          window.location.href = "./login.html";
+          return true;
+        }
+      }
+    </script>
+    <script src="practice.js"></script>
+  </body>
+</html>
